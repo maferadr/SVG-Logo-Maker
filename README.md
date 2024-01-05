@@ -53,7 +53,7 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
 [Solution URL Link:]( https://github.com/maferadr/SVG-Logo-Maker.git)
 
 ## Walthrough Video Link:
-[Clickj here to Watch]()
+[Clickj here to Watch](https://drive.google.com/file/d/1VYiEslwtX6Q1fqlmRZyIvumzTf7TZTfX/view)
 
 ## Installation Process:
 1. Clone the repository created on Github on your VSC code to start working on.
