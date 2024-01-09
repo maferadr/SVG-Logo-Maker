@@ -1,8 +1,9 @@
-//We call for the main file in which the user is going to generate de SVG.
+//Import the files needed in the index.js => Inquirer for prompt functions
 const { writeFile } = require('fs/promises');
 const inquirer = require('inquirer');
 const { Shape }= require('./lib/shapes')
 
+//Assign a constructor class for the svg structure.
 class SVG{
     constructor(){
         this.textElement = ''
@@ -19,6 +20,7 @@ class SVG{
     }
 }
 
+//Validate the prompt written by the user => Up to 3 characters.
 const lenghtValidator = async (input) =>{
     if(input.length > 0 && input.length < 4){
         return true
@@ -27,6 +29,7 @@ const lenghtValidator = async (input) =>{
     }
 }
 
+//Prompt questions
 const userInput = 
     [
         {
@@ -57,15 +60,18 @@ const userInput =
         }
     ]
 
+    //Generate a new svg shape
     const shapeSVG = new SVG();
     shapeSVG.setTextElement(userInput.text, userInput.color);
     shapeSVG.setShapeElement(userInput.shape);
 
 
+    //We call for inquirer.prompt to be prompted in question through the CLI.
     inquirer.prompt(userInput)
     .then((answers)=>{
         console.log(answers)
     })
+    //File will be created in the examples folder => currently empty
     .then(()=>{
         return writeFile('./examples/logo.svg', shapeSVG.render())
     })
